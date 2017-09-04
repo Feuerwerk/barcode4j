@@ -3,10 +3,47 @@
 
 	<packaging>pom</packaging>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>de.boxxit</groupId>
+	<groupId>net.sf.barcode4j</groupId>
 	<artifactId>barcode4j-parent</artifactId>
 	<version>2.2</version>
 	<name>Barcode4J Parent</name>
+	<description>Barcode4J is a flexible generator for barcodes written in Java.</description>
+	<url>http://barcode4j.sourceforge.net</url>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/Feuerwerk/barcode4j</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>jmaerki</id>
+			<name>Jeremias Märki</name>
+			<email>jmaerki@users.sourceforge.net</email>
+		</developer>
+		<developer>
+			<id>the_webmaestro</id>
+			<name>Web Maestro Clay Leeds</name>
+			<email>the_webmaestro@users.sourceforge.net</email>
+		</developer>
+		<developer>
+			<id>nicolaken</id>
+			<name>Nicola Ken Barozzi</name>
+			<email>nicolaken@krysalis.org</email>
+		</developer>
+		<developer>
+			<id>buerkle</id>
+			<name>Dietmar Bürkle</name>
+			<email>buerkle@users.sourceforge.net</email>
+		</developer>
+	</developers>
 
 	<modules>
 		<module>barcode4j</module>
@@ -16,5 +53,22 @@
 		<module>barcode4j-xalan</module>
 		<module>barcode4j-xmlgraphics-commons</module>
 	</modules>
+
+	<distributionManagement>
+		<repository>
+			<id>boxxit-repository</id>
+			<url>scpexe://boxx-it.de/var/www/repository</url>
+		</repository>
+	</distributionManagement>
+
+	<build>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh-external</artifactId>
+				<version>1.0-beta-6</version>
+			</extension>
+		</extensions>
+	</build>
 
 </project>

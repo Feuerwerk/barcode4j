@@ -9,7 +9,7 @@
 
 	<parent>
 		<artifactId>barcode4j-parent</artifactId>
-		<groupId>de.boxxit</groupId>
+		<groupId>net.sf.barcode4j</groupId>
 		<version>2.2</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
