@@ -96,6 +96,8 @@ public class PDF417HighLevelEncoder implements PDF417Constants {
      * Performs high-level encoding of a PDF417 message using the algorithm described in annex P
      * of ISO/IEC 15438:2001(E).
      * @param msg the message
+     * @param encoding which encoding to use
+     * @param enableECI should eci be enabled
      * @return the encoded message (the char values range from 0 to 928)
      */
     public static String encodeHighLevel(String msg, String encoding, boolean enableECI) {

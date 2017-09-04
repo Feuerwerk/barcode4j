@@ -44,12 +44,20 @@ import org.apache.fop.fo.PropertyList;
  */
 public class BarcodeElement extends BarcodeObj {
 
-    /** @see org.apache.fop.fo.FONode#FONode(FONode) */
+    /**
+     * Main constructor.
+     * @param parent parent of this node
+     * @see org.apache.fop.fo.FONode#FONode(FONode) */
     public BarcodeElement(FONode parent) {
         super(parent);
     }
 
     /**
+     * Initialize the node with its name, location information, and attributes The attributes must be used immediately as the sax attributes will be altered for the next element.
+     * @param elementName element name (e.g., "fo:block")
+     * @param locator Locator object (ignored by default)
+     * @param attlist Collection of attributes passed to us from the parser.
+     * @param propertyList the property list of the parent node
      * @see org.apache.fop.fo.FONode#processNode
      */
     public void processNode(String elementName,

@@ -1,12 +1,12 @@
 /*
  * Copyright 2002-2004 Jeremias Maerki.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,7 +20,7 @@ import org.krysalis.barcode4j.output.BarcodeCanvasSetupException;
 
 /**
  * Abstract base class for implementations that generate SVG.
- * 
+ *
  * @author Jeremias Maerki
  * @version $Id: AbstractSVGGeneratingCanvasProvider.java,v 1.3 2006/11/07 16:43:36 jmaerki Exp $
  */
@@ -32,29 +32,31 @@ public abstract class AbstractSVGGeneratingCanvasProvider
 
     private boolean useNamespace = true;
     private String prefix = "";
-    
+
     /**
      * Creates a new AbstractSVGCanvasProvider.
      * @param useNamespace Controls whether namespaces should be used
      * @param namespacePrefix the namespace prefix to use, null for no prefix
+     * @param orientation which orientation
      * @throws BarcodeCanvasSetupException if setting up the provider fails
      */
-    public AbstractSVGGeneratingCanvasProvider(boolean useNamespace, String namespacePrefix, 
-                    int orientation) 
+    public AbstractSVGGeneratingCanvasProvider(boolean useNamespace, String namespacePrefix,
+                    int orientation)
                 throws BarcodeCanvasSetupException {
         super(orientation);
-        if (!useNamespace && namespacePrefix != null) 
+        if (!useNamespace && namespacePrefix != null)
             throw new IllegalArgumentException("No prefix allow when namespaces are enabled");
         this.useNamespace = true;
         this.prefix = namespacePrefix;
     }
-    
+
     /**
      * Creates a new AbstractSVGCanvasProvider with namespaces enabled.
      * @param namespacePrefix the namespace prefix to use, null for no prefix
+     * @param orientation which orientation
      * @throws BarcodeCanvasSetupException if setting up the provider fails
      */
-    public AbstractSVGGeneratingCanvasProvider(String namespacePrefix, int orientation) 
+    public AbstractSVGGeneratingCanvasProvider(String namespacePrefix, int orientation)
                 throws BarcodeCanvasSetupException {
         this(true, namespacePrefix, orientation);
     }
@@ -62,19 +64,21 @@ public abstract class AbstractSVGGeneratingCanvasProvider
     /**
      * Creates a new AbstractSVGCanvasProvider.
      * @param useNamespace Controls whether namespaces should be used
+     * @param orientation which orientation
      * @throws BarcodeCanvasSetupException if setting up the provider fails
      */
-    public AbstractSVGGeneratingCanvasProvider(boolean useNamespace, int orientation) 
+    public AbstractSVGGeneratingCanvasProvider(boolean useNamespace, int orientation)
                 throws BarcodeCanvasSetupException {
         this(useNamespace, null, orientation);
     }
 
     /**
-     * Creates a new AbstractSVGCanvasProvider with default settings (with 
+     * Creates a new AbstractSVGCanvasProvider with default settings (with
      * namespaces, but without namespace prefix).
+     * @param orientation which orientation
      * @throws BarcodeCanvasSetupException if setting up the provider fails
      */
-    public AbstractSVGGeneratingCanvasProvider(int orientation) 
+    public AbstractSVGGeneratingCanvasProvider(int orientation)
                 throws BarcodeCanvasSetupException {
         this(true, null, orientation);
     }
@@ -86,7 +90,7 @@ public abstract class AbstractSVGGeneratingCanvasProvider
     public boolean isNamespaceEnabled() {
         return this.useNamespace;
     }
-    
+
     /**
      * Returns the namespace prefix
      * @return the namespace prefix (may be null)
@@ -94,9 +98,9 @@ public abstract class AbstractSVGGeneratingCanvasProvider
     public String getNamespacePrefix() {
         return this.prefix;
     }
-    
+
     /**
-     * Constructs a fully qualified element name based on the namespace 
+     * Constructs a fully qualified element name based on the namespace
      * settings.
      * @param localName the local name
      * @return the fully qualified name

@@ -93,7 +93,6 @@ public class EAN128LogicImpl { //extends Code128LogicImpl{
      * Encodes a message into an array of character set indexes.
      * @param msg the message to encode
      * @return the requested array of character set indexes
-     * @see #getEncoder()
      */
     public int[] getEncodedMessage(String msg) {
         setMessage(msg);
@@ -400,23 +399,15 @@ public class EAN128LogicImpl { //extends Code128LogicImpl{
             throw new RuntimeException("Internal error");
         }
     }
-    /**
-     * @return
-     */
+
     public char getGroupSeparator() {
         return groupSeparator;
     }
 
-    /**
-     * @param c
-     */
     public void setGroupSeparator(char c) {
         groupSeparator = c;
     }
 
-    /**
-     * @param string
-     */
     public void setTemplate(String string) {
         EAN128AI[] newTemplates = null;
         if (string == null || string.trim().length() == 0) {
@@ -434,32 +425,20 @@ public class EAN128LogicImpl { //extends Code128LogicImpl{
         }
         ais = newTemplates;
     }
-    /**
-     * @return
-     */
+
     public char getCheckDigitMarker() {
         return checkDigitMarker;
     }
 
-    /**
-     * @param c
-     */
     public void setCheckDigitMarker(char c) {
         checkDigitMarker = c;
     }
 
-    /**
-     * @return
-     */
     public boolean isOmitBrackets() {
         return omitBrackets;
     }
 
-    /**
-     * @param b
-     */
     public void setOmitBrackets(boolean b) {
         omitBrackets = b;
     }
-
 }

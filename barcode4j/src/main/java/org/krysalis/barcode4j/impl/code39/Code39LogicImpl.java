@@ -23,7 +23,6 @@ import org.krysalis.barcode4j.ClassicBarcodeLogicHandler;
  * This class is an implementation of the Code39 barcode.
  *
  * @author Jeremias Maerki
- * @todo Add ASCII-7bit encoding table
  * @version $Id: Code39LogicImpl.java,v 1.5 2009/02/20 09:33:43 jmaerki Exp $
  */
 public class Code39LogicImpl {
@@ -95,6 +94,7 @@ public class Code39LogicImpl {
      *   characters in the human-readable message
      * @param displayChecksum Controls whether to display checksum
      *   in the human-readable message
+     * @param extendedCharSet use extended charset
      */
     public Code39LogicImpl(ChecksumMode mode, boolean displayStartStop,
                 boolean displayChecksum, boolean extendedCharSet) {

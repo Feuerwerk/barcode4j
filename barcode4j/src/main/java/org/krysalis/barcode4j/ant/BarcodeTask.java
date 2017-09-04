@@ -164,7 +164,6 @@ public class BarcodeTask extends Task {
     /**
      * Sets the desired symbology.
      * @param symbol the symbology to set
-     * @see http://barcode4j.sourceforge.net/latest/barcode-xml.html
      */
     public void setSymbol(String symbol) {
         this.symbol = symbol;
